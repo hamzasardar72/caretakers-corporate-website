@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | The Care Takers Pvt Ltd</title>
+    <meta name="description" content="Get in touch with The Care Takers. Contact us for free quotes and facility management solutions.">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-brand">
+    <i class="fas fa-building"></i> The Care Takers
+  </div>
+  <ul class="navbar-nav" id="navbarNav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="mobile-menu-btn" id="mobileMenuBtn">
+    <i class="fas fa-bars"></i>
+  </button>
+</nav>
+
+<!-- CONTACT HERO -->
+<section class="hero" style="background: linear-gradient(135deg, rgba(10, 14, 39, 0.8) 0%, rgba(0, 102, 255, 0.2) 50%, rgba(10, 14, 39, 0.8) 100%), url('hero_bg.png') center/cover; position: relative;">
+  <div class="hero-content">
+    <h1>Get In Touch</h1>
+    <p>We're here to help. Reach out with any questions or to get a free quote for our services.</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact">
+  <div class="contact-content">
+    <div class="contact-info">
+      <h2 style="margin-bottom: var(--spacing-lg);">Contact Information</h2>
+      
+      <div class="contact-item reveal slide-up">
+        <div class="contact-icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="contact-details">
+          <h4>Office Location</h4>
+          <p>Plot No. 123, Business Avenue, Lahore, Pakistan</p>
+        </div>
+      </div>
+
+      <div class="contact-item reveal slide-up">
+        <div class="contact-icon">
+          <i class="fas fa-phone"></i>
+        </div>
+        <div class="contact-details">
+          <h4>Phone Number</h4>
+          <p>+92 300-0000000<br>+92 321-1111111</p>
+        </div>
+      </div>
+
+      <div class="contact-item reveal slide-up">
+        <div class="contact-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="contact-details">
+          <h4>Email Address</h4>
+          <p>info@caretakers.com<br>support@caretakers.com</p>
+        </div>
+      </div>
+
+      <div class="contact-item reveal slide-up">
+        <div class="contact-icon">
+          <i class="fas fa-clock"></i>
+        </div>
+        <div class="contact-details">
+          <h4>Business Hours</h4>
+          <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Emergency: 24/7 Available</p>
+        </div>
+      </div>
+      
+      <div class="map-container" style="margin-top: 2rem; width: 100%; height: 250px; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md);">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108846.52985160844!2d74.25052994966624!3d31.514332356885605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23abe6ccc7e2462!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <form class="contact-form" method="POST" action="contact.html">
+      {% csrf_token %}
+      <h2 style="margin-bottom: var(--spacing-lg); color: var(--text-primary);">Send Us a Message</h2>
+      
+      <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="0300-0000000" required>
+      </div>
+
+      <div class="form-group">
+        <label for="company">Company/Organization</label>
+        <input type="text" id="company" name="company" placeholder="Your company name">
+      </div>
+
+      <div class="form-group">
+        <label for="service">Service Interested In *</label>
+        <select id="service" name="service" style="padding: var(--spacing-md); background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-light); border-radius: var(--radius-md); color: var(--text-primary); font-family: var(--font-family); font-size: var(--font-size-sm); transition: all var(--transition-normal); cursor: pointer;" required>
+          <option style="background: var(--primary-dark); color: var(--text-primary);" value="">Select a service...</option>
+          <option style="background: var(--primary-dark); color: var(--text-primary);" value="cleaning">Professional Cleaning</option>
+          <option style="background: var(--primary-dark); color: var(--text-primary);" value="maintenance">Preventive Maintenance</option>
+          <option style="background: var(--primary-dark); color: var(--text-primary);" value="hvac">AC & HVAC Services</option>
+          <option style="background: var(--primary-dark); color: var(--text-primary);" value="fumigation">Fumigation & Pest Control</option>
+          <option style="background: var(--primary-dark); color: var(--text-primary);" value="electrical">Electrical Services</option>
+          <option style="background: var(--primary-dark); color: var(--text-primary);" value="plumbing">Plumbing Services</option>
+          <option style="background: var(--primary-dark); color: var(--text-primary);" value="other">Other Services</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" placeholder="Please share details about your facility or service requirements..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary form-submit" style="width: 100%;">
+        <i class="fas fa-send"></i> Send Message
+      </button>
+      <p style="font-size: var(--font-size-sm); color: var(--text-muted); margin-top: var(--spacing-md);">
+        We typically respond within 24 hours. For urgent matters, please call us directly.
+      </p>
+    </form>
+  </div>
+</section>
+
+<!-- WHY CONTACT US -->
+<section class="features">
+  <div class="section-header reveal slide-up">
+    <h2>Why Choose Our Services</h2>
+    <p>Get ready to experience premium facility management</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-item reveal slide-up">
+      <div class="feature-icon">✅</div>
+      <h3>Free Consultation</h3>
+      <p>Complimentary facility assessment and personalized service recommendations.</p>
+    </div>
+    <div class="feature-item reveal slide-up">
+      <div class="feature-icon">💬</div>
+      <h3>Quick Response</h3>
+      <p>Fast communication with dedicated account managers for all your needs.</p>
+    </div>
+    <div class="feature-item reveal slide-up">
+      <div class="feature-icon">💰</div>
+      <h3>Transparent Pricing</h3>
+      <p>No hidden costs - clear, competitive quotes tailored to your budget.</p>
+    </div>
+    <div class="feature-item reveal slide-up">
+      <div class="feature-icon">🎯</div>
+      <h3>Custom Solutions</h3>
+      <p>Services customized to match your specific requirements and preferences.</p>
+    </div>
+    <div class="feature-item reveal slide-up">
+      <div class="feature-icon">📊</div>
+      <h3>Performance Reports</h3>
+      <p>Regular reports and analytics to track service quality and improvements.</p>
+    </div>
+    <div class="feature-item reveal slide-up">
+      <div class="feature-icon">🤝</div>
+      <h3>Long-term Partnership</h3>
+      <p>Committed to building lasting relationships with continuous value delivery.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>About Us</h4>
+      <p>The Care Takers Pvt Ltd is Pakistan's premier facilities management company delivering excellence since 2015.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Services</h4>
+      <a href="services.html">Professional Cleaning</a>
+      <a href="services.html">Maintenance Services</a>
+      <a href="services.html">Technical Services</a>
+      <a href="services.html">Emergency Services</a>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="services.html">Services</a>
+    </div>
+    <div class="footer-section">
+      <h4>Contact Info</h4>
+      <p><i class="fas fa-phone"></i> 0300-0000000</p>
+      <p><i class="fas fa-envelope"></i> info@caretakers.com</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 The Care Takers Pvt Ltd. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/923000000000" target="_blank" class="whatsapp-btn" title="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- BACK TO TOP BUTTON -->
+<button class="back-to-top" id="backToTopBtn" title="Back to Top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="static/js/main.js"></script>
+
+</body>
+</html>
